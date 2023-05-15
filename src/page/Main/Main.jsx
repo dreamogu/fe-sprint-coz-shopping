@@ -23,7 +23,10 @@ function Main() {
         ) : (
           <ul className={styles.ul}>
             {products.map((product) => (
-              <Product {...product} />
+              <Product
+                key={product.id}
+                {...product}
+              />
             ))}
           </ul>
         )}

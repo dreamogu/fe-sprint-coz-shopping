@@ -1,16 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initial = 0;
 const bookmarkSlice = createSlice({
-  name: 'product',
-  initialState: initial,
+  name: 'bookmarks',
+  initialState: [],
   reducers: {
-    add: (state, action) => {
-      state.value = state.value + action.payload;
-      // 제이슨으로 변경하는거 추가
+    addBookmark: (state, action) => {
+      const product = action.payload;
+      state.push(product);
+      // localStorage에 북마크를 저장
+      localStorage.setItem('bookmarks', JSON.stringify(state));
+    },
+    removeBookmark: (state, action) => {
+      const productId = action.payload;
+      // 북마크를 제거
+      state = state.filter((item) => item.id !== productId);
+      // localStorage에서 북마크를 업데이트합니다.
+      localStorage.setItem('bookmarks', JSON.stringify(state));
     },
   },
 });
 
-export default bookmarkSlice;
-export const { add } = bookmarkSlice.actions;
+export const { addBookmark, removeBookmark } = bookmarkSlice.actions;
+export default bookmarkSlice.reducer;

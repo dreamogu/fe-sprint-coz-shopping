@@ -3,6 +3,7 @@
   flex-direction: column;
   max-width: 264px;
   margin: 12px 24px 12px 0;
+  cursor: pointer;
 }
 
 .product_item:nth-child(4n) {
