@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  right: -45px;
+  width: 200px;
+  height: 150px;
+  background: #ffffff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+}
+
+.nav:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 16px 19px;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-left: -16px;
+  top: -19px;
+  left: 70%;
+}
+
+.nav > * {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav > * + * {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav img {
+  margin-right: 8px;
+}
