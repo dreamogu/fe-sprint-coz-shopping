@@ -101,14 +101,14 @@ export default function Product(props) {
           </button>
         </div>
         {productInfo}
+        {modal && (
+          <Modal
+            title={title || brand_name}
+            imgUrl={image_url || brand_image_url}
+            setModal={setModal}
+          />
+        )}
       </li>
-      {modal && (
-        <Modal
-          title={title || brand_name}
-          imgUrl={image_url || brand_image_url}
-          setModal={setModal}
-        />
-      )}
     </>
   );
 }

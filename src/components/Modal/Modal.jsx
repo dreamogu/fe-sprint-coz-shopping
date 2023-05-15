@@ -4,12 +4,22 @@ import { AiFillStar, AiOutlineClose } from 'react-icons/ai';
 
 export default function Modal(props) {
   const { imgUrl, title, setModal } = props;
-  const handleClose = () => {
+  const handleClose = (event) => {
+    event.stopPropagation();
     setModal(false);
   };
+  const handleModalClick = (event) => {
+    event.stopPropagation();
+  };
   return (
-    <section className={styles.modal_wrap}>
-      <div className={styles.modal}>
+    <section
+      className={styles.modal_wrap}
+      onClick={handleClose}
+    >
+      <div
+        className={styles.modal}
+        onClick={handleModalClick}
+      >
         <img
           src={imgUrl}
           alt={title}
