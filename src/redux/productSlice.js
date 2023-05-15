@@ -2,10 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchProducts = createAsyncThunk(
   'products/fetch',
-  async (count) => {
-    const response = await fetch(
-      `http://cozshopping.codestates-seb.link/api/v1/products?count=${count}`
-    );
+  async (count = null) => {
+    let url = 'http://cozshopping.codestates-seb.link/api/v1/products';
+    if (count !== null) {
+      url += `?count=${count}`;
+    }
+    const response = await fetch(url);
     const data = await response.json();
     return data;
   }
