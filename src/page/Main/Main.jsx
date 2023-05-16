@@ -9,6 +9,7 @@ function Main() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
   const loading = useSelector((state) => state.products.loading);
+  const bookmarks = useSelector((state) => state.bookmark.isBookmarked);
 
   useEffect(() => {
     dispatch(fetchProducts(4));
@@ -33,6 +34,21 @@ function Main() {
       </section>
       <section className={styles.container}>
         <h2 className={styles.title}>북마크 리스트</h2>
+        <ul className={styles.ul}>
+          {bookmarks ? (
+            bookmarks
+              .slice(-4)
+              .reverse()
+              .map((bookmark) => (
+                <Product
+                  key={bookmark.id}
+                  {...bookmark}
+                />
+              ))
+          ) : (
+            <div>북마크가 없습니다.</div>
+          )}
+        </ul>
       </section>
     </>
   );
