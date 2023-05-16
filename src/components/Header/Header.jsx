@@ -11,24 +11,26 @@ export default function Header() {
   };
   return (
     <header className={styles.header}>
-      <Link
-        to='/'
-        className={styles.logo}
-      >
-        <img
-          src='/icons/logo.svg'
-          alt='coz shopping 로고'
-        />
-        <h1>COZ Shopping</h1>
-      </Link>
-      <div className={styles.nav_container}>
-        <button
-          className={styles.button}
-          onClick={handleNavClick}
+      <div className={styles.header_inner}>
+        <Link
+          to='/'
+          className={styles.logo}
         >
-          <GiHamburgerMenu />
-        </button>
-        {isNavOpen && <Nav />}
+          <img
+            src='/icons/logo.svg'
+            alt='coz shopping 로고'
+          />
+          <h1>COZ Shopping</h1>
+        </Link>
+        <div className={styles.nav_container}>
+          <button
+            className={styles.button}
+            onClick={handleNavClick}
+          >
+            <GiHamburgerMenu />
+          </button>
+          {isNavOpen && <Nav />}
+        </div>
       </div>
     </header>
   );
