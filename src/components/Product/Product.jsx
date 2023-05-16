@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import styles from './Product.module.css';
 import { AiFillStar } from 'react-icons/ai';
 import Modal from '../Modal/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleBookmark } from '../../redux/bookmarkSlice';
 
 export default function Product(props) {
+  const isBookmarked = useSelector((state) => state.bookmark.isBookmarked);
+  const dispatch = useDispatch();
+
   const {
     id,
     type,
@@ -27,6 +32,11 @@ export default function Product(props) {
   const [modal, setModal] = useState(false);
   const handleModalOpen = () => {
     setModal(true);
+  };
+  // 북마크
+  const handleBookmarkClick = (event) => {
+    event.stopPropagation();
+    dispatch(toggleBookmark(id));
   };
 
   // info 부분 변수
@@ -92,17 +102,26 @@ export default function Product(props) {
             src={image_url || brand_image_url}
             alt={title || brand_name}
           />
-          <button>
-            <AiFillStar
-              color='rgba(223, 223, 223, 0.81)'
-              size='24
+          <button onClick={handleBookmarkClick}>
+            {isBookmarked.includes(id) ? (
+              <AiFillStar
+                color='#FFD361'
+                size='24
       '
-            />
+              />
+            ) : (
+              <AiFillStar
+                color='rgba(223, 223, 223, 0.81)'
+                size='24
+      '
+              />
+            )}
           </button>
         </div>
         {productInfo}
         {modal && (
           <Modal
+            id={id}
             title={title || brand_name}
             imgUrl={image_url || brand_image_url}
             setModal={setModal}
