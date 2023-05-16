@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleBookmark } from '../../redux/bookmarkSlice';
 
 export default function Modal(props) {
-  const { id, imgUrl, title, setModal } = props;
+  // const { id, imgUrl, title, setModal } = props;
+  const { modalData, setModal } = props;
+  const { id, title, brand_name, image_url, brand_image_url } = modalData;
   const handleClose = (event) => {
     event.stopPropagation();
     setModal(false);
@@ -18,7 +20,7 @@ export default function Modal(props) {
   const dispatch = useDispatch();
   const handleBookmarkClick = (event) => {
     event.stopPropagation();
-    dispatch(toggleBookmark(id));
+    dispatch(toggleBookmark(modalData));
   };
 
   return (
@@ -31,15 +33,15 @@ export default function Modal(props) {
         onClick={handleModalClick}
       >
         <img
-          src={imgUrl}
-          alt={title}
+          src={image_url || brand_image_url}
+          alt={title || brand_name}
         />
         <div className={styles.bookmark}>
           <button
             className={styles.bookmark_btn}
             onClick={handleBookmarkClick}
           >
-            {isBookmarked.includes(id) ? (
+            {isBookmarked.some((item) => item.id === id) ? (
               <AiFillStar
                 color='#FFD361'
                 size='24'
@@ -51,7 +53,7 @@ export default function Modal(props) {
               />
             )}
           </button>
-          <span className={styles.name}>{title}</span>
+          <span className={styles.name}>{title || brand_name}</span>
         </div>
         <button
           className={styles.close}

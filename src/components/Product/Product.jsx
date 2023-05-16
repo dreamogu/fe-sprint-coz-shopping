@@ -33,10 +33,23 @@ export default function Product(props) {
   const handleModalOpen = () => {
     setModal(true);
   };
+  const modalData = {
+    id,
+    type,
+    title,
+    sub_title,
+    brand_name,
+    price,
+    discountPercentage,
+    image_url,
+    brand_image_url,
+    follower,
+  };
+
   // 북마크
   const handleBookmarkClick = (event) => {
     event.stopPropagation();
-    dispatch(toggleBookmark(id));
+    dispatch(toggleBookmark(props));
   };
 
   // info 부분 변수
@@ -103,7 +116,7 @@ export default function Product(props) {
             alt={title || brand_name}
           />
           <button onClick={handleBookmarkClick}>
-            {isBookmarked.includes(id) ? (
+            {isBookmarked.some((item) => item.id === id) ? (
               <AiFillStar
                 color='#FFD361'
                 size='24
@@ -121,10 +134,8 @@ export default function Product(props) {
         {productInfo}
         {modal && (
           <Modal
-            id={id}
-            title={title || brand_name}
-            imgUrl={image_url || brand_image_url}
             setModal={setModal}
+            modalData={modalData}
           />
         )}
       </li>

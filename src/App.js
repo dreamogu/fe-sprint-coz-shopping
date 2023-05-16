@@ -24,6 +24,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  console.log(localStorage);
   return <RouterProvider router={router} />;
 }
 
