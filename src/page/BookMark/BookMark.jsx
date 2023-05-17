@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './BookMark.module.css';
 import Product from '../../components/Product/Product';
 import { useInView } from 'react-intersection-observer';
+import Alert from '../../components/Alert/Alert';
 
 export default function BookMark() {
   const bookmarks = useSelector((state) => state.bookmark.isBookmarked);
@@ -31,7 +32,7 @@ export default function BookMark() {
         filter={filter}
         setFilter={setFilter}
       />
-      {bookmarks ? (
+      {bookmarks.length > 0 ? (
         <>
           <ul className={styles.ul}>
             {bookmarkToShow.map((bookmark) => (
@@ -44,7 +45,7 @@ export default function BookMark() {
           <div ref={ref} />
         </>
       ) : (
-        <div>북마크가 없습니다.</div>
+        <Alert type='bookmark' />
       )}
     </section>
   );

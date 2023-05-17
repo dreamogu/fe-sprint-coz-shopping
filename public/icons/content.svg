@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #f1c411;
+      }
+
+      .cls-4 {
+        fill: #ecf0f1;
+      }
+
+      .cls-5 {
+        fill: #d6dcde;
+      }
+
+      .cls-6 {
+        fill: #452cdd;
+      }
+
+      .cls-7 {
+        fill: #2b3e50;
+      }
+
+      .cls-8 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-9 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        mix-blend-mode: screen;
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="3"/>
+      <feFlood flood-color="#000" flood-opacity=".1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-9">
+    <g id="_레이어_2" data-name="레이어 2">
+      <g id="Media_Icons" data-name="Media Icons">
+        <g>
+          <g>
+            <rect class="cls-1" width="120" height="120" rx="20" ry="20"/>
+            <path class="cls-2" d="m2,102V22C2,11,11,2,22,2h80c4.99,0,9.56,1.87,13.08,4.92-3.67-4.23-9.07-6.92-15.08-6.92H20C9,0,0,9,0,20v80c0,6.01,2.7,11.4,6.92,15.08-3.05-3.51-4.92-8.08-4.92-13.08Z"/>
+          </g>
+          <g class="cls-8">
+            <polygon class="cls-4" points="27.33 17.33 27.33 103.06 92.67 103.06 92.67 33.15 76.85 17.33 27.33 17.33"/>
+            <polygon class="cls-5" points="74.47 17.34 74.47 35.53 92.67 35.53 92.67 33.15 76.85 17.33 74.47 17.34"/>
+            <polygon class="cls-4" points="76.85 17.34 76.85 33.16 92.67 33.16 76.85 17.34"/>
+            <polygon class="cls-6" points="27.33 87.67 42.73 103.06 50.27 103.06 27.33 80.13 27.33 87.67"/>
+            <path class="cls-3" d="m86.01,90.3c.89,4.67-3.14,8.7-7.81,7.81-2.61-.5-4.72-2.6-5.21-5.21-.89-4.67,3.14-8.7,7.81-7.81,2.61.5,4.72,2.6,5.21,5.21Z"/>
+            <path class="cls-4" d="m84.64,90.39c.85,3.84-2.5,7.19-6.34,6.34-1.94-.43-3.5-1.99-3.93-3.93-.85-3.84,2.5-7.19,6.34-6.34,1.94.43,3.5,1.99,3.93,3.93Z"/>
+            <path class="cls-3" d="m83.54,90.95c.42,2.76-1.92,5.11-4.69,4.69-1.72-.26-3.13-1.67-3.39-3.39-.42-2.76,1.92-5.11,4.69-4.69,1.72.26,3.13,1.67,3.39,3.39Z"/>
+            <rect class="cls-7" x="35.83" y="26.33" width="24.17" height="3"/>
+            <rect class="cls-7" x="35.83" y="32.83" width="33.5" height="3"/>
+            <rect class="cls-7" x="35.83" y="44.83" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="50.17" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="55.5" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="60.83" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="66.17" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="71.5" width="47.74" height="2"/>
+            <rect class="cls-7" x="35.83" y="76.83" width="29.67" height="2"/>
+            <rect class="cls-7" x="52.71" y="86.5" width="13.98" height="2"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
