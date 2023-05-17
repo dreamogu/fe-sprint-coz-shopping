@@ -9,18 +9,14 @@ export default function BookMark() {
   const bookmarks = useSelector((state) => state.bookmark.isBookmarked);
   const [page, setPage] = useState(1);
   const { ref, inView } = useInView({ triggerOnce: false });
-  const [filter, setFilter] = useState('total');
+  const [filter, setFilter] = useState('Total');
 
-  const filteredbookmarks = bookmarks.filter((bookmark) => {
-    if (filter === 'total') return true;
-    if (filter === 'product') return bookmark.type === 'Product';
-    if (filter === 'category') return bookmark.type === 'Category';
-    if (filter === 'exhibition') return bookmark.type === 'Exhibition';
-    if (filter === 'brand') return bookmark.type === 'Brand';
-    return false;
+  const filteredBookmarks = bookmarks.filter((bookmark) => {
+    if (filter === 'Total') return true;
+    return bookmark.type === filter;
   });
 
-  const reverseFilteredBookmarks = filteredbookmarks.reverse();
+  const reverseFilteredBookmarks = filteredBookmarks.reverse();
   const bookmarkToShow = reverseFilteredBookmarks.slice(0, page * 12);
   useEffect(() => {
     if (inView) setPage((prevPage) => prevPage + 1);
