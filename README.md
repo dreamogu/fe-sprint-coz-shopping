@@ -1,6 +1,6 @@
 # fe-sprint-coz-shopping
 
-`📦src
+```📦src
  ┣ 📂components
  ┃ ┣ 📂Filter
  ┃ ┃ ┣ 📜Filter.jsx
@@ -54,4 +54,4 @@
  ┣ 📜logo.svg
  ┣ 📜reportWebVitals.js
  ┗ 📜setupTests.js
- `
+ ```
