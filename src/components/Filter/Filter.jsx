@@ -2,62 +2,29 @@ import React from 'react';
 import styles from './Filter.module.css';
 
 export default function Filter({ filter, setFilter }) {
-  const filterHandler = (type) => {
-    setFilter(type);
-  };
+  const buttons = [
+    { type: 'total', img: '/img/total.png', text: '전체' },
+    { type: 'product', img: '/img/product.png', text: '상품' },
+    { type: 'category', img: '/img/category.png', text: '카테고리' },
+    { type: 'exhibition', img: '/img/exhibition.png', text: '기획전' },
+    { type: 'brand', img: '/img/brand.png', text: '브랜드' },
+  ];
 
   return (
     <section className={styles.filter_item}>
-      <button
-        onClick={() => filterHandler('total')}
-        className={filter === 'total' ? styles.selected : ''}
-      >
-        <img
-          src='/img/total.png'
-          alt=''
-        />
-        <span className={styles.type}>전체</span>
-      </button>
-      <button
-        onClick={() => filterHandler('product')}
-        className={filter === 'product' ? styles.selected : ''}
-      >
-        <img
-          src='/img/product.png'
-          alt=''
-        />
-        <span className={styles.type}>상품</span>
-      </button>
-      <button
-        onClick={() => filterHandler('category')}
-        className={filter === 'category' ? styles.selected : ''}
-      >
-        <img
-          src='/img/category.png'
-          alt=''
-        />
-        <span className={styles.type}>카테고리</span>
-      </button>
-      <button
-        onClick={() => filterHandler('exhibition')}
-        className={filter === 'exhibition' ? styles.selected : ''}
-      >
-        <img
-          src='/img/exhibition.png'
-          alt=''
-        />
-        <span className={styles.type}>기획전</span>
-      </button>
-      <button
-        onClick={() => filterHandler('brand')}
-        className={filter === 'brand' ? styles.selected : ''}
-      >
-        <img
-          src='/img/brand.png'
-          alt=''
-        />
-        <span className={styles.type}>브랜드</span>
-      </button>
+      {buttons.map((button, index) => (
+        <button
+          key={index}
+          onClick={() => setFilter(button.type)}
+          className={filter === button.type ? styles.selected : ''}
+        >
+          <img
+            src={button.img}
+            alt=''
+          />
+          <span className={styles.type}>{button.text}</span>
+        </button>
+      ))}
     </section>
   );
 }
