@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/productSlice';
 import Product from '../../components/Product/Product';
 import styles from './Main.module.css';
+import Alert from '../../components/Alert/Alert';
 
 function Main() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function Main() {
       <section className={styles.container}>
         <h2 className={styles.title}>상품 리스트</h2>
         {loading ? (
-          <div>Loading...</div>
+          <Alert type='data' />
         ) : (
           <ul className={styles.ul}>
             {products.map((product) => (
@@ -34,9 +35,9 @@ function Main() {
       </section>
       <section className={styles.container}>
         <h2 className={styles.title}>북마크 리스트</h2>
-        <ul className={styles.ul}>
-          {bookmarks ? (
-            bookmarks
+        {bookmarks.length > 0 ? (
+          <ul className={styles.ul}>
+            {bookmarks
               .slice(-4)
               .reverse()
               .map((bookmark) => (
@@ -44,11 +45,11 @@ function Main() {
                   key={bookmark.id}
                   {...bookmark}
                 />
-              ))
-          ) : (
-            <div>북마크가 없습니다.</div>
-          )}
-        </ul>
+              ))}
+          </ul>
+        ) : (
+          <Alert type='bookmark' />
+        )}
       </section>
     </>
   );
