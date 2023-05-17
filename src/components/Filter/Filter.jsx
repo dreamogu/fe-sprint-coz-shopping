@@ -3,11 +3,11 @@ import styles from './Filter.module.css';
 
 export default function Filter({ filter, setFilter }) {
   const buttons = [
-    { type: 'total', img: '/img/total.png', text: '전체' },
-    { type: 'product', img: '/img/product.png', text: '상품' },
-    { type: 'category', img: '/img/category.png', text: '카테고리' },
-    { type: 'exhibition', img: '/img/exhibition.png', text: '기획전' },
-    { type: 'brand', img: '/img/brand.png', text: '브랜드' },
+    { type: 'Total', img: '/img/total.png', text: '전체' },
+    { type: 'Product', img: '/img/product.png', text: '상품' },
+    { type: 'Category', img: '/img/category.png', text: '카테고리' },
+    { type: 'Exhibition', img: '/img/exhibition.png', text: '기획전' },
+    { type: 'Brand', img: '/img/brand.png', text: '브랜드' },
   ];
 
   return (

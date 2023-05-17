@@ -12,15 +12,11 @@ function ProductsList() {
   const loading = useSelector((state) => state.products.loading);
   const [page, setPage] = useState(1);
   const { ref, inView } = useInView({ triggerOnce: false });
-  const [filter, setFilter] = useState('total');
+  const [filter, setFilter] = useState('Total');
 
-  const filteredProducts = products.filter((product) => {
-    if (filter === 'total') return true;
-    if (filter === 'product') return product.type === 'Product';
-    if (filter === 'category') return product.type === 'Category';
-    if (filter === 'exhibition') return product.type === 'Exhibition';
-    if (filter === 'brand') return product.type === 'Brand';
-    return false;
+  const filteredProducts = products.filter((bookmark) => {
+    if (filter === 'Total') return true;
+    return bookmark.type === filter;
   });
 
   const productsToShow = filteredProducts.slice(0, page * 12);
