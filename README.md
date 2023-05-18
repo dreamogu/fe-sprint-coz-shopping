@@ -1,5 +1,5 @@
 # 🌊 Coz Shopping Project
-![May-18-2023 14-52-44](https://github.com/dreamogu/codestates/assets/121333344/fd7e0a6c-e0e3-40e9-9c34-6ca4f483f003)
+![May-18-2023 14-52-44](https://github.com/dreamogu/example-github-action/assets/121333344/c7dae94c-5eae-4224-a9e4-6c4bf8f1f571)
 
 
 ## 🌊 프로젝트 소개
