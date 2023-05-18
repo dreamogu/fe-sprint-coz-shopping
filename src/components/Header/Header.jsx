@@ -9,6 +9,9 @@ export default function Header() {
   const handleNavClick = () => {
     setIsNavOpen(!isNavOpen);
   };
+  const handleCloseNav = () => {
+    setIsNavOpen(false);
+  };
   return (
     <header className={styles.header}>
       <div className={styles.header_inner}>
@@ -29,7 +32,7 @@ export default function Header() {
           >
             <GiHamburgerMenu />
           </button>
-          {isNavOpen && <Nav />}
+          {isNavOpen && <Nav closeNav={handleCloseNav} />}
         </div>
       </div>
     </header>

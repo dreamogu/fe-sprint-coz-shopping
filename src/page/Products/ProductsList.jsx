@@ -37,6 +37,7 @@ function ProductsList() {
   return (
     <>
       <section className={styles.container}>
+        <h2 className={styles.title}>상품 페이지 리스트</h2>
         <Filter
           filter={filter}
           setFilter={setFilter}

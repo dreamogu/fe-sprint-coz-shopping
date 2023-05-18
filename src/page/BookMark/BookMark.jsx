@@ -28,6 +28,7 @@ export default function BookMark() {
 
   return (
     <section className={styles.container}>
+      <h2 className={styles.title}>북마크 리스트</h2>
       <Filter
         filter={filter}
         setFilter={setFilter}
