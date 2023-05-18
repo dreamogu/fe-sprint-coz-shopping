@@ -26,7 +26,7 @@ const DetailComponents = {
       </div>
     </>
   ),
-  content: (name) => (
+  content: ({ name }) => (
     <>
       <img
         src='/icons/content.svg'
