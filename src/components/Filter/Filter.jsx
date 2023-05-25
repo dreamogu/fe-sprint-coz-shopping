@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './Filter.module.css';
+import totalIcon from '../../asset/img/total.png';
+import productIcon from '../../asset/img/product.png';
+import categoryIcon from '../../asset/img/category.png';
+import exhibitionIcon from '../../asset/img/exhibition.png';
+import brandIcon from '../../asset/img/brand.png';
 
 export default function Filter({ filter, setFilter }) {
   const buttons = [
-    { type: 'Total', img: '/img/total.png', text: '전체' },
-    { type: 'Product', img: '/img/product.png', text: '상품' },
-    { type: 'Category', img: '/img/category.png', text: '카테고리' },
-    { type: 'Exhibition', img: '/img/exhibition.png', text: '기획전' },
-    { type: 'Brand', img: '/img/brand.png', text: '브랜드' },
+    { type: 'Total', img: totalIcon, text: '전체' },
+    { type: 'Product', img: productIcon, text: '상품' },
+    { type: 'Category', img: categoryIcon, text: '카테고리' },
+    { type: 'Exhibition', img: exhibitionIcon, text: '기획전' },
+    { type: 'Brand', img: brandIcon, text: '브랜드' },
   ];
 
   return (
