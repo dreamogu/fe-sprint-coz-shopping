@@ -1,17 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Alert from './Alert';
 
 export default {
-  title: 'components/Alert',
+  title: 'Common/Alert',
   component: Alert,
-  decorators: [
-    (Story) => (
-      <Router>
-        <Story />
-      </Router>
-    ),
-  ],
 };
 
 const Template = (args) => <Alert {...args} />;
@@ -24,4 +16,7 @@ Default.argTypes = {
       type: 'select',
     },
   },
+};
+Default.args = {
+  type: 'data',
 };

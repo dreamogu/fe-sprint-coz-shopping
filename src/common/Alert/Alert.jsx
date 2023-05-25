@@ -63,7 +63,7 @@ const DetailComponents = {
 };
 
 export default function Alert({ type, name }) {
-  const DetailComponent = DetailComponents[type];
+  const DetailComponent = DetailComponents[type] || DetailComponents['data'];
 
   return (
     <section className={styles.container}>
