@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import Toast from '../components/Toast/Toast';
+import { TOAST_MESSAGES } from '../page/BookMark/toastMessage';
+import globalToken from '../tokens/global.json';
+
+// 디자인 토큰에 지정된 값을 사용해 스타일을 지정합니다.
+const { BookmarkStar } = globalToken;
 
 function getInitialBookmarks() {
   const storedBookmarks = localStorage.getItem('bookmark');
@@ -27,8 +32,8 @@ const bookmarkSlice = createSlice({
 
         toast(
           <Toast
-            message='상품이 북마크에서 제거되었습니다.'
-            color='rgba(223, 223, 223, 0.81)'
+            message={TOAST_MESSAGES.bookmarkRemoved}
+            color={BookmarkStar.color.off}
           />
         );
       } else {
@@ -37,8 +42,8 @@ const bookmarkSlice = createSlice({
 
         toast(
           <Toast
-            message='상품이 북마크에서 추가되었습니다.'
-            color='#FFD361'
+            message={TOAST_MESSAGES.bookmarkAdded}
+            color={BookmarkStar.color.on}
           />
         );
       }

@@ -3,11 +3,13 @@ import styles from './Modal.module.css';
 import { AiFillStar, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleBookmark } from '../../redux/bookmarkSlice';
+import globalToken from '../../tokens/global.json';
 
 export default function Modal(props) {
-  // const { id, imgUrl, title, setModal } = props;
   const { modalData, setModal } = props;
   const { id, title, brand_name, image_url, brand_image_url } = modalData;
+  const { BookmarkStar } = globalToken;
+
   const handleClose = (event) => {
     event.stopPropagation();
     setModal(false);
@@ -43,12 +45,12 @@ export default function Modal(props) {
           >
             {isBookmarked.some((item) => item.id === id) ? (
               <AiFillStar
-                color='#FFD361'
+                color={BookmarkStar.color.on}
                 size='24'
               />
             ) : (
               <AiFillStar
-                color='rgba(223, 223, 223, 0.81)'
+                color={BookmarkStar.color.off}
                 size='24'
               />
             )}

@@ -4,10 +4,12 @@ import { AiFillStar } from 'react-icons/ai';
 import Modal from '../Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleBookmark } from '../../redux/bookmarkSlice';
+import globalToken from '../../tokens/global.json';
 
 export default function Product(props) {
   const isBookmarked = useSelector((state) => state.bookmark.isBookmarked);
   const dispatch = useDispatch();
+  const { BookmarkStar } = globalToken;
 
   const {
     id,
@@ -118,13 +120,13 @@ export default function Product(props) {
           <button onClick={handleBookmarkClick}>
             {isBookmarked.some((item) => item.id === id) ? (
               <AiFillStar
-                color='#FFD361'
+                color={BookmarkStar.color.on}
                 size='24
       '
               />
             ) : (
               <AiFillStar
-                color='rgba(223, 223, 223, 0.81)'
+                color={BookmarkStar.color.off}
                 size='24
       '
               />
