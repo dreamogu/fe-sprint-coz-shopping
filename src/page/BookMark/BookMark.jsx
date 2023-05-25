@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './BookMark.module.css';
 import Product from '../../components/Product/Product';
 import { useInView } from 'react-intersection-observer';
-import Alert from '../../components/Alert/Alert';
+import Alert from '../../common/Alert/Alert';
 
 export default function BookMark() {
   const bookmarks = useSelector((state) => state.bookmark.isBookmarked);

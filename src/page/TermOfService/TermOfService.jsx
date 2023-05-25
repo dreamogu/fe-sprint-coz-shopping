@@ -1,5 +1,5 @@
 import React from 'react';
-import Alert from '../../components/Alert/Alert';
+import Alert from '../../common/Alert/Alert';
 
 export default function TermOfService() {
   return (
