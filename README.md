@@ -18,6 +18,7 @@
 - React-Router-Dom
 - React-Icons
 - React-Toastify
+- Storybook 
 
 **Tools**
 - Figma
@@ -56,10 +57,33 @@
 
 ```
 src
- ┣ components
+ ┣ asset
+ ┃ ┣ icons
+ ┃ ┃ ┣ .DS_Store
+ ┃ ┃ ┣ bookmark.svg
+ ┃ ┃ ┣ content.svg
+ ┃ ┃ ┣ empty_bookmark.svg
+ ┃ ┃ ┣ error.svg
+ ┃ ┃ ┣ loading.svg
+ ┃ ┃ ┣ logo.svg
+ ┃ ┃ ┗ products.svg
+ ┃ ┗ img
+ ┃ ┃ ┣ brand.png
+ ┃ ┃ ┣ category.png
+ ┃ ┃ ┣ exhibition.png
+ ┃ ┃ ┣ product.png
+ ┃ ┃ ┗ total.png
+ ┣ common
  ┃ ┣ Alert
  ┃ ┃ ┣ Alert.jsx
- ┃ ┃ ┗ Alert.module.css
+ ┃ ┃ ┣ Alert.module.css
+ ┃ ┃ ┗ Alert.stories.js
+ ┃ ┣ FilterButton
+ ┃ ┃ ┣ FilterButton.jsx
+ ┃ ┃ ┣ FilterButton.module.css
+ ┃ ┃ ┗ FilterButton.stories.js
+ ┃ ┗ .DS_Store
+ ┣ components
  ┃ ┣ Filter
  ┃ ┃ ┣ Filter.jsx
  ┃ ┃ ┗ Filter.module.css
@@ -78,13 +102,16 @@ src
  ┃ ┣ Product
  ┃ ┃ ┣ Product.jsx
  ┃ ┃ ┗ Product.module.css
+ ┃ ┣ Title
  ┃ ┗ Toast
  ┃ ┃ ┣ Toast.jsx
- ┃ ┃ ┗ Toast.module.css
+ ┃ ┃ ┣ Toast.module.css
+ ┃ ┃ ┗ ToastMessage.js
  ┣ page
  ┃ ┣ BookMark
  ┃ ┃ ┣ BookMark.jsx
- ┃ ┃ ┗ BookMark.module.css
+ ┃ ┃ ┣ BookMark.module.css
+ ┃ ┃ ┗ toastMessage.js
  ┃ ┣ Main
  ┃ ┃ ┣ Main.jsx
  ┃ ┃ ┗ Main.module.css
@@ -107,6 +134,29 @@ src
  ┃ ┣ bookmarkSlice.js
  ┃ ┣ productSlice.js
  ┃ ┗ store.js
+ ┣ stories
+ ┃ ┣ assets
+ ┃ ┃ ┣ code-brackets.svg
+ ┃ ┃ ┣ colors.svg
+ ┃ ┃ ┣ comments.svg
+ ┃ ┃ ┣ direction.svg
+ ┃ ┃ ┣ flow.svg
+ ┃ ┃ ┣ plugin.svg
+ ┃ ┃ ┣ repo.svg
+ ┃ ┃ ┗ stackalt.svg
+ ┃ ┣ Button.jsx
+ ┃ ┣ Button.stories.js
+ ┃ ┣ Header.jsx
+ ┃ ┣ Header.stories.js
+ ┃ ┣ Introduction.mdx
+ ┃ ┣ Page.jsx
+ ┃ ┣ Page.stories.js
+ ┃ ┣ button.css
+ ┃ ┣ header.css
+ ┃ ┗ page.css
+ ┣ tokens
+ ┃ ┗ global.json
+ ┣ .DS_Store
  ┣ App.css
  ┣ App.js
  ┣ App.test.js
