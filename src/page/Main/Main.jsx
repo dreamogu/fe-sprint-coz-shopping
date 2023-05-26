@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/productSlice';
 import Product from '../../components/Product/Product';
 import styles from './Main.module.css';
-import Alert from '../../components/Alert/Alert';
+import Alert from '../../common/Alert/Alert';
 
 function Main() {
   const dispatch = useDispatch();

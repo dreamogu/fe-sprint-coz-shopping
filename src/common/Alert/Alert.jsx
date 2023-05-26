@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './Alert.module.css';
 import { Link } from 'react-router-dom';
+import loadingIcon from '../../asset/icons/loading.svg';
+import bookmarkIcon from '../../asset/icons/empty_bookmark.svg';
+import contentIcon from '../../asset/icons/content.svg';
+import errorIcon from '../../asset/icons/error.svg';
 
 const DetailComponents = {
   data: () => (
     <>
       <img
-        src='/icons/loading.svg'
+        src={loadingIcon}
         alt=''
       />
       <div>
@@ -18,7 +22,7 @@ const DetailComponents = {
   bookmark: () => (
     <>
       <img
-        src='/icons/empty_bookmark.svg'
+        src={bookmarkIcon}
         alt=''
       />
       <div>
@@ -29,7 +33,7 @@ const DetailComponents = {
   content: ({ name }) => (
     <>
       <img
-        src='/icons/content.svg'
+        src={contentIcon}
         alt=''
       />
       <div>
@@ -40,7 +44,7 @@ const DetailComponents = {
   error: () => (
     <>
       <img
-        src='/icons/error.svg'
+        src={errorIcon}
         alt=''
       />
       <div>

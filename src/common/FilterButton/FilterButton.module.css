@@ -1,0 +1,23 @@
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 18px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.type {
+  margin-top: 6.5px;
+  border-bottom: 3px solid transparent;
+}
+
+.selected {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.selected .type {
+  border-bottom-color: var(--color-accent);
+}

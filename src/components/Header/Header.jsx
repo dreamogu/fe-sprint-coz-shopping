@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import logo from '../../asset/icons/logo.svg';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
           className={styles.logo}
         >
           <img
-            src='/icons/logo.svg'
+            src={logo}
             alt='coz shopping 로고'
           />
           <h1>COZ Shopping</h1>

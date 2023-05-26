@@ -5,7 +5,7 @@ import Product from '../../components/Product/Product';
 import styles from './ProductsList.module.css';
 import Filter from '../../components/Filter/Filter';
 import { useInView } from 'react-intersection-observer';
-import Alert from '../../components/Alert/Alert';
+import Alert from '../../common/Alert/Alert';
 
 function ProductsList() {
   const dispatch = useDispatch();
