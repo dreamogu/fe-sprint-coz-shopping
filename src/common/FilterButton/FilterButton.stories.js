@@ -6,12 +6,11 @@ export default {
   component: FilterButton,
 };
 
-const Template = (args) => <FilterButton {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  type: 'Total',
-  img: totalIcon,
-  text: '전체',
-  isSelected: false,
+export const Default = {
+  args: {
+    type: 'Total',
+    img: totalIcon,
+    text: '전체',
+    isSelected: false,
+  },
 };

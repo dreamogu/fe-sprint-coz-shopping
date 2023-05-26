@@ -1,4 +1,3 @@
-import React from 'react';
 import Alert from './Alert';
 
 export default {
@@ -6,17 +5,16 @@ export default {
   component: Alert,
 };
 
-const Template = (args) => <Alert {...args} />;
-
-export const Default = Template.bind({});
-Default.argTypes = {
-  type: {
-    options: ['data', 'bookmark', 'content', 'error'],
-    control: {
-      type: 'select',
+export const Default = {
+  argTypes: {
+    type: {
+      options: ['data', 'bookmark', 'content', 'error'],
+      control: {
+        type: 'select',
+      },
     },
   },
-};
-Default.args = {
-  type: 'data',
+  args: {
+    type: 'data',
+  },
 };
